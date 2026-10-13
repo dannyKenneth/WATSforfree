@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,18 +12,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+});
+
 export const metadata: Metadata = {
   title: "WATsForFree",
   description: "Free stuff at UWaterloo and Laurier",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      /* Ensure inter.variable is correctly injected into className here */
+      className={`dark ${inter.variable} ${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#0D0618] text-slate-100 antialiased">
+        {children}
+      </body>
     </html>
   );
 }
