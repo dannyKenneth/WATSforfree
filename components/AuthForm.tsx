@@ -42,19 +42,20 @@ export default function AuthForm({
         <form action={formAction} className="mt-8 space-y-5">
           <div className="space-y-2">
             <label
-              htmlFor="email"
+              htmlFor={isSignUp ? "email" : "identifier"}
               className="text-sm font-medium text-slate-200"
             >
-              Email
+              {isSignUp ? "Email" : "Email or admin username"}
             </label>
             <input
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
+              id={isSignUp ? "email" : "identifier"}
+              name={isSignUp ? "email" : "identifier"}
+              type={isSignUp ? "email" : "text"}
+              autoComplete={isSignUp ? "email" : "username"}
+              autoCapitalize="none"
               required
               className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-400"
-              placeholder="you@example.com"
+              placeholder={isSignUp ? "you@example.com" : "you@example.com or admin"}
             />
           </div>
 

@@ -41,6 +41,8 @@ Authentication uses Supabase Auth with email and password. Copy `.env.example` t
 
 Enable email/password sign-in in Supabase Authentication settings. When email confirmation is enabled, new users must confirm the message sent to their inbox before logging in. After successful sign-up or login, users are sent to the protected `/listings` page.
 
+For the `admin` username login alias, set `SUPABASE_ADMIN_EMAIL` to the email of a dedicated Supabase Auth user and create that user in **Authentication > Users**. Sign in with username `admin` and that account's Supabase password. Use a unique, strong password managed by Supabase; the username alias does not bypass authentication, and no password belongs in app code or environment variables.
+
 To manage registered accounts, open **Authentication > Users** in the Supabase dashboard. The dashboard provides account emails and status; passwords are securely handled by Supabase and are never readable by the app owner. Do not add a Supabase service-role key to this application.
 
 The free-item listings in `data/listings.json` were imported from the supplied spreadsheet. Events with dates before October 14, 2026 were omitted; verify event details and availability with each linked organizer before attending.

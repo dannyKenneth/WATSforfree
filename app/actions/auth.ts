@@ -27,6 +27,30 @@ function getCredentials(formData: FormData) {
   return { email: email.trim(), password };
 }
 
+function getLoginCredentials(formData: FormData) {
+  const identifier = formData.get("identifier");
+  const password = formData.get("password");
+
+  if (
+    typeof identifier !== "string" ||
+    typeof password !== "string" ||
+    password.length === 0
+  ) {
+    return null;
+  }
+
+  const email =
+    identifier.trim().toLowerCase() === "admin"
+      ? process.env.SUPABASE_ADMIN_EMAIL
+      : identifier.trim();
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return null;
+  }
+
+  return { email, password };
+}
+
 export async function signIn(
   _previousState: AuthFormState,
   formData: FormData
@@ -39,10 +63,14 @@ export async function signIn(
     };
   }
 
-  const credentials = getCredentials(formData);
+  const credentials = getLoginCredentials(formData);
 
   if (!credentials) {
-    return { ...emptyState, error: "Enter a valid email and password." };
+    return {
+      ...emptyState,
+      error:
+        "Enter a valid email and password. To use the admin username, configure SUPABASE_ADMIN_EMAIL.",
+    };
   }
 
   const supabase = await createSupabaseServerClient();
