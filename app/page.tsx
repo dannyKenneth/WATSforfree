@@ -22,7 +22,7 @@ export default function Home() {
       <section id="features" className="w-full">
         <Features />
       </section>
-      <section id="how-it-works" className="w-full">
+      <section id="how-it-works" className="w-full scroll-mt-24">
         <HowItWorks />
       </section>
       <section id="faq" className="w-full">
@@ -36,13 +36,6 @@ export default function Home() {
           <span className="font-bold text-white tracking-tight">WATsForFree</span>
           <span>•</span>
           <span>Built for UWaterloo & Wilfrid Laurier students</span>
-        </div>
-        
-        <div className="flex items-center gap-6">
-          <a href="/deals" className="hover:text-amber-400 transition-colors">Deals</a>
-          <a href="/about" className="hover:text-amber-400 transition-colors">About</a>
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-amber-400 transition-colors">GitHub</a>
-          <a href="https://discord.com" target="_blank" rel="noreferrer" className="hover:text-amber-400 transition-colors">Discord</a>
         </div>
       </footer>
     </div>

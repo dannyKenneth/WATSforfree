@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Supabase authentication
+
+Authentication uses Supabase Auth with email and password. Copy `.env.example` to `.env.local` and fill in the project URL, publishable key, and site URL from your Supabase project. In the Supabase dashboard, configure the site URL and add `${NEXT_PUBLIC_SITE_URL}/auth/callback` to the allowed redirect URLs.
+
+Enable email/password sign-in in Supabase Authentication settings. When email confirmation is enabled, new users must confirm the message sent to their inbox before logging in. After successful sign-up or login, users are sent to the protected `/listings` page.
+
+To manage registered accounts, open **Authentication > Users** in the Supabase dashboard. The dashboard provides account emails and status; passwords are securely handled by Supabase and are never readable by the app owner. Do not add a Supabase service-role key to this application.
+
+The free-item listings in `data/listings.json` were imported from the supplied spreadsheet. Events with dates before October 14, 2026 were omitted; verify event details and availability with each linked organizer before attending.
