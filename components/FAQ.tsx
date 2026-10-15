@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
   {
     question: "How fast do notifications arrive when a drop happens?",
     answer:
-      "Alerts are delivered in real time (< 30 seconds) through our web portal and community channels as soon as a new drop is verified."
+      "Alerts are shared through the web portal when a new drop is verified."
   }
 ];
 

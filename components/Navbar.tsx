@@ -26,15 +26,13 @@ const Navbar = () => {
   }, [lastScrollY]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.replace('#', '');
-      const element = document.getElementById(targetId);
+    const targetId = href.split('#')[1];
+    const element = targetId ? document.getElementById(targetId) : null;
 
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        window.history.pushState(null, '', href);
-      }
+    if (targetId && window.location.pathname === '/' && element) {
+      e.preventDefault();
+      element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', href);
     }
   };
 

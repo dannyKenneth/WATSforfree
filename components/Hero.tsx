@@ -1,4 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
+import HowItWorksLink from '@/components/HowItWorksLink'
 
 const Hero = () => {
   return (
@@ -12,7 +14,7 @@ const Hero = () => {
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[1.05] bg-gradient-to-b from-white via-slate-100 to-slate-400/70 bg-clip-text text-transparent">
         Never pay for campus
         <span className="relative inline-block bg-gradient-to-b from-white via-slate-100 to-slate-400/20 bg-clip-text text-transparent ml-3">
-          snacks again
+          food again
           
           <svg 
             className="absolute -bottom-3 left-0 w-full h-4 text-amber-400 overflow-visible pointer-events-none" 
@@ -43,12 +45,12 @@ const Hero = () => {
       </p>
 
       <div className="mt-10 flex items-center gap-4">
-        <button className="px-6 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-amber-400/20">
+        <Link href="/signup" className="px-6 py-3 rounded-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-semibold text-sm transition-all shadow-lg shadow-amber-400/20">
           Find Free Stuff
-        </button>
-        <button className="px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white font-medium text-sm border border-white/10 transition-all">
+        </Link>
+        <HowItWorksLink className="px-6 py-3 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-white font-medium text-sm border border-white/10 transition-all">
           How it works
-        </button>
+        </HowItWorksLink>
       </div>
     </section>
   )

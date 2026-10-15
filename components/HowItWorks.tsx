@@ -30,7 +30,7 @@ const HowItWorks = () => {
           How WATsForFree works
         </h3>
         <p className="text-slate-400 text-sm md:text-base">
-          Three simple steps to never paying full price for campus snacks and merch again.
+          Three simple steps to finding free campus food and merch.
         </p>
       </div>
 
