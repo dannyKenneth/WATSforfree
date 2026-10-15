@@ -45,7 +45,7 @@ export default function AuthForm({
               htmlFor={isSignUp ? "email" : "identifier"}
               className="text-sm font-medium text-slate-200"
             >
-              {isSignUp ? "Email" : "Email or admin username"}
+              {isSignUp ? "Email" : "Email"}
             </label>
             <input
               id={isSignUp ? "email" : "identifier"}
@@ -55,7 +55,7 @@ export default function AuthForm({
               autoCapitalize="none"
               required
               className="w-full rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition focus:border-amber-400"
-              placeholder={isSignUp ? "you@example.com" : "you@example.com or admin"}
+              placeholder={isSignUp ? "you@example.com" : "you@example.com"}
             />
           </div>
 
