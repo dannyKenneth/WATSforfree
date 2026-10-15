@@ -13,7 +13,7 @@ export default function About() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-white leading-tight">
-            Built for students who want to eat well, save money, and never miss a drop.
+            Built for students who want to eat well and save money.
           </h2>
         </div>
 

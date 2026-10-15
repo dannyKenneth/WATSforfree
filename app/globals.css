@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,6 +119,25 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: rgba(255, 255, 255, 0.1);
   --sidebar-ring: oklch(0.78 0.15 75);
+}
+
+.listing-map-pin {
+  border: 0;
+  background: transparent;
+}
+
+.listing-map-pin span {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 2px solid white;
+  border-radius: 9999px;
+  background: #f59e0b;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 35%);
 }
 
 :root, .dark {
